@@ -16,12 +16,13 @@
 
 .temp h5 {
     color: #237cc5;
-    font-family: 'Poiret One', cursive;
+    /* font-family: 'Poiret One', cursive; */
     font-weight: bolder;
+     font-size: 3.7em;
 }
 
 .weather h4 {
     color: #237cc5;
-    font-family: 'Poiret One', cursive;
+    /* font-family: 'Poiret One', cursive; */
     font-weight: bolder;
 }

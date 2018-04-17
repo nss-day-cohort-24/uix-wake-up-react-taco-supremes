@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Weather.css';
-
+import base from './Api';
 class Weather extends Component {
     constructor() {
         super();
@@ -46,10 +46,8 @@ class Weather extends Component {
         return (
 
             <div className="weather">
-
                 <h4>Current Weather</h4>
-
-                <form className="form" onSubmit={this.handleSubmit}>
+                    <form className="form" onSubmit={this.handleSubmit}>
                     <input
                         className="weather-input"
                         value={this.state.value}

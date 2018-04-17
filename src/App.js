@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Weather from './Weather';
+import DateTimeDisplay from './Date';
+import base from './Api';
 // import {Button} from 'reactstrap';
 class App extends Component {
   render() {
@@ -13,7 +15,7 @@ class App extends Component {
         </header>
       
         <Weather/> 
-       
+<DateTimeDisplay/>
       </div>
     );
   }

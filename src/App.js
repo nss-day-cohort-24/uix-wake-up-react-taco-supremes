@@ -11,7 +11,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Taco Supremes</h1>
         </header>
-        <div class="row">
+        <div className="row">
           <News />
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
 
 function NewsList(props){
     return(
@@ -8,6 +7,7 @@ function NewsList(props){
             <span>
                <div>{props.headline}</div>
                <div>{props.description}</div>
+               <div><img src={props.img} alt={props.alt}/></div>
                {/* <Button color="info" onClick={props.showMore}>Show More</Button> */}
             </span>
             :
@@ -89,16 +89,18 @@ render(){
         return (<div>Loading the Top News from NewsAPI.org...</div>)
     } else{
         let articles = this.state.objResult;
-        let articleList = articles.map((article) => 
-                <div>
+        let articleList = articles.map((article, index) => 
+                <div key={index}>
                     <NewsList 
                     newsLoaded={newsLoaded} 
                     headline={article.title}
-                    description={article.description} />
+                    description={article.description}
+                    img={article.urlToImage}
+                    alt={article.description} />
                 </div>
         )
         return(
-           <div class="col-md-6">
+           <div className="col-md-6">
             {articleList}
             </div>
         )

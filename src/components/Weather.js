@@ -30,10 +30,16 @@ class Weather extends Component {
 
     getWeather() {
         console.log('getWeather');
-        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.value},us&appid=7c6212572dc00aca5008de2575471183&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.value},us&appid=7c6212572dc00aca5008de2575471183&units=imperial`)
             .then(res => res.json())
             .then((result) => {
-                this.setState({weatherLoaded: true, temperature: result.main.temp, city: result.name, image: result.weather.description, value: ''});
+                this.setState({
+                    weatherLoaded: true,
+                     temperature: result.main.temp,
+                     city: result.name,
+                     image: result.weather.description,
+                     description:result.info.weather.description, 
+                     value: ''});
 
             }, (error) => {
                 console.log('get weather error: ', error);
@@ -59,7 +65,7 @@ class Weather extends Component {
                 <div className="temp">
                     <h5>{this.state.city}</h5>
                     <h5>{this.state.temperature}</h5>
-                    <h3>{this.state.image}</h3>
+                    <h3>{this.state.description}</h3>
                     <img src=""/>
                 </div>
             </div>

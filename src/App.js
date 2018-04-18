@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import News from './components/news.js';
 import './App.css';
-
+import Weather from './Weather';
+import DateTimeDisplay from './Date';
+import base from './config/constants';
+// import {Button} from 'reactstrap';
 class App extends Component {
   render() {
     return (
@@ -11,9 +14,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Taco Supremes</h1>
         </header>
+        <div className="container">
+        <div>
+        <Weather/> 
+        <DateTimeDisplay/>
+        </div>
         <div className="row">
           <News />
         </div>
+</div>
       </div>
     );
   }

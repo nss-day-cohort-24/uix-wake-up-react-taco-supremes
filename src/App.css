@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
 
@@ -26,3 +26,29 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+/* Calendar display */
+
+#time {
+  font-size: 13em;
+  text-align: center;
+}
+
+#date {
+  font-size: 3.7em;
+  text-align: center;
+}
+
+#calendar {
+  font-size: 2em;
+}
+
+#calendar-status {
+  margin-top: 25px;
+}
+
+#calendar-empty {
+  margin-top: 40px;
+  font-size: 2em;
+  text-align: center;
+}
+

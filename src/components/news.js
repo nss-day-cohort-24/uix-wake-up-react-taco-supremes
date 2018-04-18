@@ -77,7 +77,7 @@ class News extends Component {
 
 
 render(){
-    const {error, newsLoaded, objResult, showMore} = this.state;
+    const {error, newsLoaded, objResult} = this.state;
     
     if (error){
         return (
@@ -88,7 +88,7 @@ render(){
     } else if (!newsLoaded){
         return (<div>Loading the Top News from NewsAPI.org...</div>)
     } else{
-        let articles = this.state.objResult;
+        let articles = objResult;
         let articleList = articles.map((article, index) => 
                 <div key={index}>
                     <NewsList 
@@ -100,7 +100,7 @@ render(){
                 </div>
         )
         return(
-           <div className="col-md-6">
+           <div className="col col-md-6">
             {articleList}
             </div>
         )

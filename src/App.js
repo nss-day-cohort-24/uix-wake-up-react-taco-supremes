@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import News from './components/news.js';
 import './App.css';
 
 class App extends Component {
@@ -10,9 +11,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Taco Supremes</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div class="row">
+          <News />
+        </div>
       </div>
     );
   }

@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import './Weather.css';
 import base from './config/constants';
+
+
+
 class Weather extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             weatherLoaded: false,

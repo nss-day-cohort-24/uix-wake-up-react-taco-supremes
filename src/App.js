@@ -6,6 +6,8 @@ import Weather from './Weather';
 import DateTimeDisplay from './Date';
 import base from './config/constants';
 // import {Button} from 'reactstrap';
+
+
 class App extends Component {
   render() {
     return (
@@ -15,7 +17,7 @@ class App extends Component {
           <h1 className="App-title">Taco Supremes</h1>
         </header>
        <Weather/> 
-        <DateTimeDisplay/>
+       <DateTimeDisplay/>
         <div className="row">
           <News />
         </div>

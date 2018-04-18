@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Moment from 'moment';
 import './App.css';
-import base from './Api';
+import base from './config/constants';
 class DateTimeDisplay extends Component {
 
     constructor(props) {

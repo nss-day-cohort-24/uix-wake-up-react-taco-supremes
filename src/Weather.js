@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Weather.css';
-import base from './Api';
+import base from './config/constants';
 class Weather extends Component {
     constructor() {
         super();

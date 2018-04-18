@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Weather from './Weather';
 import DateTimeDisplay from './Date';
-import base from './Api';
+import base from './config/constants';
 // import {Button} from 'reactstrap';
 class App extends Component {
   render() {
@@ -13,9 +13,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Taco Supremes</h1>
         </header>
-      
         <Weather/> 
-<DateTimeDisplay/>
+        <DateTimeDisplay/>
       </div>
     );
   }

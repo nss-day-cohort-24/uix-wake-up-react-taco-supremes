@@ -7,10 +7,6 @@ import DateTimeDisplay from './components/Date';
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 004c320df15298428742d85ce8ab126e64810f02
 class App extends Component {
   render() {
     return (
@@ -19,7 +15,6 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Taco Supremes</h1>
         </header>
-<<<<<<< HEAD
         <div className="container">
           <div className="row">
             <Weather/> 
@@ -28,12 +23,6 @@ class App extends Component {
           <div className="row">
             <News />
           </div>
-=======
-       <Weather/> 
-       <DateTimeDisplay/>
-        <div className="row">
-          <News />
->>>>>>> 004c320df15298428742d85ce8ab126e64810f02
         </div>
       </div>
     );

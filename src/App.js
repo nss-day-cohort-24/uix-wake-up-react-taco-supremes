@@ -30,21 +30,15 @@ class App extends Component {
 
         <div className = "container">
           <div className = "row">
-            <div className = "col">
+              <ToDoList />
               <News />
-            </div>
-            <div>
-              {/* <List /> */}
-            </div>
           </div>
           <div className="row">
             <Quote />
           </div>
-          <div className = "row">
-            <ToDoList />
-          </div>
         </div>
-      </div>
+
+    </div>
     );
   }
 }

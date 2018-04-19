@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import News from './news';
 import '../App.css';
-import Weather from './Weather';
-import DateTimeDisplay from './Date';
 import List from './List';
 import base from '../config/constants';
 import AddItem from './AddItem';
@@ -76,25 +72,19 @@ class ToDoList extends React.Component {
   
       if(printedList){ // Printed list
         return (
-            <div className="container">
-            <div className="row">
-              <div className="col-sm-6 col-md-offset-3">
-                <div className="col-sm-12">
-                  <h3 className="text-center"> My Todo List </h3>
-                  <AddItem add={this.handleAddItem.bind(this)} />
-                  {this.state.loading === true
-                    ? <h3> LOADING... </h3>
-                    : <List
-                        items={this.state.list}
-                        remove={this.handleRemoveItem.bind(this)}
-                        edit={this.handleEditItem.bind(this)}
-                        submit={this.handleSubmitItem}
-                        itemToIndex={this.state.itemToEdit}
-                      />}
-                </div>
-              </div>
+            <div className="col-md-4">
+              <h3 className="text-center"> My Todo List </h3>
+              <AddItem add={this.handleAddItem.bind(this)} />
+              {this.state.loading === true
+                ? <h3> LOADING... </h3>
+                : <List
+                    items={this.state.list}
+                    remove={this.handleRemoveItem.bind(this)}
+                    edit={this.handleEditItem.bind(this)}
+                    submit={this.handleSubmitItem}
+                    itemToIndex={this.state.itemToEdit}
+                  />}
             </div>
-          </div>
           );
         }
   

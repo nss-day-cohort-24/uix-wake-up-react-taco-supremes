@@ -41,6 +41,19 @@ class List extends React.Component{
     console.log("handleEditItem item:", item, "index: ", index, "this:", this);
     
   }
+
+  renderInputBox(){
+
+    // return(
+    //  <input
+    //       type="text"
+    //       ref="editItem"
+    //       className="form-control"
+    //       placeholder="EditItem"
+    //       onKeyDown={this.props.edit.bind(item, index)}
+    //           />
+    // )
+  }
   render(){
     var styles = {
       listGroup: {
@@ -83,13 +96,7 @@ class List extends React.Component{
             />
   
            
-           <input
-          type="text"
-          ref="editItem"
-          className="form-control"
-          placeholder="EditItem"
-          onKeyDown={this.props.edit.bind(item, index)}
-              />
+          
 
           <button
             className="glyphicon glypicon-submit"

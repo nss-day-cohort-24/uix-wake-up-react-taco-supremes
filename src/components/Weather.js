@@ -10,15 +10,11 @@ class Weather extends Component {
             weatherLoaded: false,
             showResult: false,
             error: null,
-            temperature: 69,
-            city: "Nashville"
+            temperature : 69,
+            city: 'Nashville'
         }
-        this.handleChange = this
-            .handleChange
-            .bind(this);
-        this.handleSubmit = this
-            .handleSubmit
-            .bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -37,12 +33,11 @@ class Weather extends Component {
             .then((result) => {
                 this.setState({
                     weatherLoaded: true,
-                     temperature: result.main.temp,
-                     city: result.name,
-                     image: result.weather.description,
-                     description:result.info.weather.description, 
-                     value: ''});
-
+                     temperature: result.main.temp, 
+                     city: result.name, 
+                     image: result.weather.icon,
+                     picture:`http://openweathermap.org/img/w/${result.weather[0].icon}.png`,
+                      value: ''});
             }, (error) => {
                 console.log('get weather error: ', error);
             });
@@ -57,8 +52,6 @@ class Weather extends Component {
             <div className="weather container">
                     <div className=" row temp">
                         <h5 className = 'temp mt-2 mb-0'>{this.state.temperature}</h5>
-                        {/* <h3>{this.state.image}</h3>
-                        <img src=""/> */}
                     </div>
                     <div>
                         <h5 className='city mb-2'>{ "in" + ' ' + this.state.city}</h5>
@@ -72,7 +65,9 @@ class Weather extends Component {
                     </input>
                     {/* <button className=" row btn btn-primary" type="submit">Submit</button> */}
                 </form>
-
+                <div className="icon">
+                    <img src= {this.state.picture}/>
+                </div>
             </div>
 
         )

@@ -5,12 +5,18 @@ function NewsList(props){
     return(
         <div>
          {props.newsLoaded ?
-            <span>
-               <h3 className = 'headline'>{props.headline}</h3>
-               <h5 className = 'description'>{props.description}</h5>
-               <img className = 'newsImage' src={props.img} alt={props.alt}/>
-               {/* <Button color="info" onClick={props.showMore}>Show More</Button> */}
-            </span>
+            <div  className = 'container'>
+             <div className="row">
+               <div className='col headline'>               
+                <h4>{props.headline}</h4>
+                {/* <h5 className = 'description'>{props.description}</h5> */}
+              </div>
+              <div>
+                <img className = 'newsImage' src={props.img} alt={props.alt}/>
+              </div>
+                {/* <Button color="info" onClick={props.showMore}>Show More</Button> */}
+             </div>
+            </div>
             :
             <div>Getting Top News Articles...</div>
          }
@@ -65,7 +71,7 @@ class News extends Component {
                 this.setState({
                     newsLoaded: true,
                     objResult: result.articles
-                });
+                }); 
             },
             (error) => {
                 this.setState({
@@ -91,7 +97,7 @@ render(){
     } else{
         let articles = objResult;
         let articleList = articles.map((article, index) => 
-                <div key={index}>
+                <div className="newsList" key={index}>
                     <NewsList 
                     newsLoaded={newsLoaded} 
                     headline={article.title}
@@ -101,7 +107,7 @@ render(){
                 </div>
         )
         return(
-           <div className="">
+           <div>
             {articleList}
            </div>
         )

@@ -59,15 +59,7 @@ class ToDoList extends React.Component {
     handleEditItem(e){
       // edit the list item
       if(e.keyCode === 13){
-        // var newList = this.state.list;
-        // console.log("What's happening here", index, "and what's this:", this);
-        // this.setState({
-        //   list: newList,
-        //   editingList: true,
-        //   printedList: false,
-        //   itemToEdit: index
         
-        // });
     }
   
     }

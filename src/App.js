@@ -7,6 +7,7 @@ import List from './components/List';
 import base from './config/constants';
 import AddItem from './components/AddItem';
 import Quote from './components/Quote';
+import ToDoList from "./components/ToDoList"
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
@@ -38,6 +39,9 @@ class App extends Component {
           </div>
           <div className="row">
             <Quote />
+          </div>
+          <div className = "row">
+            <ToDoList />
           </div>
         </div>
       </div>

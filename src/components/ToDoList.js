@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import News from './components/news';
-import './App.css';
-import Weather from './components/Weather';
-import DateTimeDisplay from './components/Date';
-import List from './components/List';
-import base from './config/constants';
-import AddItem from './components/AddItem';
+import logo from '../logo.svg';
+import News from './news';
+import '../App.css';
+import Weather from './Weather';
+import DateTimeDisplay from './Date';
+import List from './List';
+import base from '../config/constants';
+import AddItem from './AddItem';
 
-class App extends React.Component {
+class ToDoList extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -127,4 +127,4 @@ class App extends React.Component {
   }
   
   
-  export default App; 
+  export default ToDoList; 

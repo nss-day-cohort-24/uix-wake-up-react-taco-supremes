@@ -39,3 +39,19 @@ h3{
   text-align: left;
 }
 
+#masterContainer{
+  height: 100vh;
+}
+
+#newsDiv{
+  height: 100vh;
+  overflow: scroll;
+
+}
+
+/* #news{
+  background-color: green;
+
+} */
+
+

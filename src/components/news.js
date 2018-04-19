@@ -5,10 +5,10 @@ function NewsList(props){
     return(
         <div>
          {props.newsLoaded ?
-            <div classNmae = 'container'>
+            <div  className = 'container'>
              <div className="row">
-               <div className='col'>               
-                <h4 className = 'headline '>{props.headline}</h4>
+               <div className='col headline'>               
+                <h4>{props.headline}</h4>
                 {/* <h5 className = 'description'>{props.description}</h5> */}
               </div>
               <div>
@@ -97,7 +97,7 @@ render(){
     } else{
         let articles = objResult;
         let articleList = articles.map((article, index) => 
-                <div key={index}>
+                <div className="newsList" key={index}>
                     <NewsList 
                     newsLoaded={newsLoaded} 
                     headline={article.title}

@@ -13,7 +13,7 @@ import Quote from './components/Quote';
 class App extends Component {
   render() {
     return (
-    <div>
+    <div id="masterContainer">
       <div className="container">
         <div className = "row" id="header">
           <div className = "col mt-4">
@@ -27,7 +27,7 @@ class App extends Component {
 
           
 
-        <div className = "container">
+        <div  id="newsDiv" className = "container">
           <div className = "row">
             <div className = "col-5 toDo">
                 <h3 className="bodyeader">TO-DO</h3>
@@ -45,15 +45,17 @@ class App extends Component {
                     <li>STUFF</li>
                   </ul>
             </div>
-            <div className = "col-6">
+            <div id="news" className = " pl-5 pr-0 col-6">
             <h3 className="text-center bodyHeader">NEWS</h3>
               <News />
             </div>
           </div>
+        </div>
+        <footer>
           <div className="row">
             <Quote />
           </div>
-        </div>
+        </footer>
       </div>
     );
   }

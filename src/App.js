@@ -7,6 +7,7 @@ import DateTimeDisplay from './components/Date';
 import List from './components/List';
 import base from './config/constants';
 import AddItem from './components/AddItem';
+import Quote from './components/Quote';
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
@@ -86,6 +87,10 @@ class App extends Component {
           </div>
           <div className="row">
             <News />
+          </div>
+
+          <div className="row">
+          <Quote />
           </div>
         </div>
       </div>

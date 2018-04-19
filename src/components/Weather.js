@@ -32,10 +32,16 @@ class Weather extends Component {
 
     getWeather() {
         console.log('getWeather');
-        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.value},us&appid=7c6212572dc00aca5008de2575471183&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.value},us&appid=7c6212572dc00aca5008de2575471183&units=imperial`)
             .then(res => res.json())
             .then((result) => {
-                this.setState({weatherLoaded: true, temperature: result.main.temp, city: result.name, image: result.weather.description, value: ''});
+                this.setState({
+                    weatherLoaded: true,
+                     temperature: result.main.temp,
+                     city: result.name,
+                     image: result.weather.description,
+                     description:result.info.weather.description, 
+                     value: ''});
 
             }, (error) => {
                 console.log('get weather error: ', error);
@@ -66,6 +72,7 @@ class Weather extends Component {
                     </input>
                     {/* <button className=" row btn btn-primary" type="submit">Submit</button> */}
                 </form>
+
             </div>
 
         )

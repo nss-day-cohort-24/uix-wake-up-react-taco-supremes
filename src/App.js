@@ -5,13 +5,15 @@ import Weather from './components/Weather';
 // import DateTimeDisplay from './components/Date';
 import List from './components/List';
 import base from './config/constants';
-// import AddItem from './components/AddItem';
+import AddItem from './components/AddItem';
+import Quote from './components/Quote';
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
 class App extends Component {
   render() {
     return (
+    <div>
       <div className="container">
         <div className = "row" id="header">
           <div className = "col-8 mt-4">
@@ -20,7 +22,10 @@ class App extends Component {
           <div className = 'col mb-5'>
             <Weather/> 
           </div>
-        </div>
+         </div>
+      </div>
+
+          
 
         <div className = "container">
           <div className = "row">
@@ -31,8 +36,10 @@ class App extends Component {
               {/* <List /> */}
             </div>
           </div>
+          <div className="row">
+            <Quote />
+          </div>
         </div>
-
       </div>
     );
   }

@@ -7,6 +7,7 @@ import List from './components/List';
 import base from './config/constants';
 import AddItem from './components/AddItem';
 import Quote from './components/Quote';
+import ToDoList from "./components/ToDoList"
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
@@ -29,26 +30,15 @@ class App extends Component {
 
         <div  id="newsDiv" className = "container">
           <div className = "row">
+
             <div className = "col-5 toDo">
-                <h3 className="bodyeader">TO-DO</h3>
-                  <ul>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                    <li>STUFF</li>
-                  </ul>
+                <ToDoList />
             </div>
             <div id="news" className = " pl-5 pr-0 col-6">
             <h3 className="text-center bodyHeader">NEWS</h3>
               <News />
             </div>
+
           </div>
         </div>
         <footer>

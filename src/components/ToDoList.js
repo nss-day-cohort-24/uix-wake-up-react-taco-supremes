@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import News from './components/news';
-import './App.css';
-import Weather from './components/Weather';
-import DateTimeDisplay from './components/Date';
-import List from './components/List';
-import base from './config/constants';
-import AddItem from './components/AddItem';
+import '../App.css';
+import List from './List';
+import base from '../config/constants';
+import AddItem from './AddItem';
 
-class App extends React.Component {
+class ToDoList extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -76,25 +72,19 @@ class App extends React.Component {
   
       if(printedList){ // Printed list
         return (
-            <div className="container">
-            <div className="row">
-              <div className="col-sm-6 col-md-offset-3">
-                <div className="col-sm-12">
-                  <h3 className="text-center"> My Todo List </h3>
-                  <AddItem add={this.handleAddItem.bind(this)} />
-                  {this.state.loading === true
-                    ? <h3> LOADING... </h3>
-                    : <List
-                        items={this.state.list}
-                        remove={this.handleRemoveItem.bind(this)}
-                        edit={this.handleEditItem.bind(this)}
-                        submit={this.handleSubmitItem}
-                        itemToIndex={this.state.itemToEdit}
-                      />}
-                </div>
-              </div>
+            <div>
+              <h3 className="bodyHeader"> My Todo List </h3>
+              <AddItem add={this.handleAddItem.bind(this)} />
+              {this.state.loading === true
+                ? <h3> LOADING... </h3>
+                : <List
+                    items={this.state.list}
+                    remove={this.handleRemoveItem.bind(this)}
+                    edit={this.handleEditItem.bind(this)}
+                    submit={this.handleSubmitItem}
+                    itemToIndex={this.state.itemToEdit}
+                  />}
             </div>
-          </div>
           );
         }
   
@@ -127,4 +117,4 @@ class App extends React.Component {
   }
   
   
-  export default App; 
+  export default ToDoList; 

@@ -71,7 +71,7 @@ class News extends Component {
                 this.setState({
                     newsLoaded: true,
                     objResult: result.articles
-                });
+                }); 
             },
             (error) => {
                 this.setState({
@@ -107,7 +107,7 @@ render(){
                 </div>
         )
         return(
-           <div className="">
+           <div>
             {articleList}
            </div>
         )

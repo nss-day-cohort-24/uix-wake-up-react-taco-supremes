@@ -89,7 +89,7 @@ class App extends Component {
               <News />
             </div>
             <div>
-              <List />
+              {/* <List /> */}
             </div>
           </div>
         </div>

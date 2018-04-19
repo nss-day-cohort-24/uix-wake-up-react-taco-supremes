@@ -7,6 +7,7 @@ import DateTimeDisplay from './components/Date';
 import List from './components/List';
 import base from './config/constants';
 import AddItem from './components/AddItem';
+import WeatherHourly from './components/WeatherHourly';
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
@@ -82,6 +83,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <Weather/> 
+            <WeatherHourly/>
             <DateTimeDisplay/>
           </div>
           <div className="row">
@@ -120,7 +122,9 @@ class App extends Component {
       else if (editingList){
         console.log("EDITING LIST IS ON.");
         return (
+
           <div className="container">
+           
           <div className="row">
             <div className="col-sm-6 col-md-offset-3">
               <div className="col-sm-12">

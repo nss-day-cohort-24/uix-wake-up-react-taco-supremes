@@ -9,14 +9,11 @@ class Weather extends Component {
         this.state = {
             weatherLoaded: false,
             showResult: false,
-            error: null
+            error: null,
+            value:''
         }
-        this.handleChange = this
-            .handleChange
-            .bind(this);
-        this.handleSubmit = this
-            .handleSubmit
-            .bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -30,11 +27,18 @@ class Weather extends Component {
 
     getWeather() {
         console.log('getWeather');
-        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.value},us&appid=7c6212572dc00aca5008de2575471183&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.value},us&appid=7c6212572dc00aca5008de2575471183&units=imperial`)
             .then(res => res.json())
             .then((result) => {
-                this.setState({weatherLoaded: true, temperature: result.main.temp, city: result.name, image: result.weather.description, value: ''});
+                console.log("kkk",result.weather[0].icon);
+                this.setState({
+                    weatherLoaded: true,
+                     temperature: result.main.temp, 
+                     city: result.name, 
+                     image: result.weather.icon,
 
+                     picture:`http://openweathermap.org/img/w/${result.weather[0].icon}.png`,
+                      value: ''});
             }, (error) => {
                 console.log('get weather error: ', error);
             });
@@ -59,8 +63,7 @@ class Weather extends Component {
                 <div className="temp">
                     <h5>{this.state.city}</h5>
                     <h5>{this.state.temperature}</h5>
-                    <h3>{this.state.image}</h3>
-                    <img src=""/>
+                    <img src= {this.state.picture}/>
                 </div>
             </div>
 

@@ -51,25 +51,27 @@ class ToDoList extends React.Component {
       //Using firebase, must update via setState for the sync to work
       //if deleting from array (not attached to FB, can use delete)
     }
-  
-    handleEditItem(index){
-      // edit the list item
-      var newList = this.state.list;
-      
-      this.setState({
-        list: newList,
-        editingList: true,
-        printedList: false,
-        itemToEdit: index
-      });
-      
-  
-    }
-  
     handleSubmitItem(index){
-  
-      console.log("Submitted for button ", index);
+
+
+      console.log("Whatever");
     }
+    handleEditItem(e){
+      // edit the list item
+      if(e.keyCode === 13){
+        // var newList = this.state.list;
+        // console.log("What's happening here", index, "and what's this:", this);
+        // this.setState({
+        //   list: newList,
+        //   editingList: true,
+        //   printedList: false,
+        //   itemToEdit: index
+        
+        // });
+    }
+  
+    }
+  
     render() {
   
       const{printedList, editingList} = this.state;
@@ -88,8 +90,8 @@ class ToDoList extends React.Component {
                         items={this.state.list}
                         remove={this.handleRemoveItem.bind(this)}
                         edit={this.handleEditItem.bind(this)}
-                        submit={this.handleSubmitItem}
                         itemToIndex={this.state.itemToEdit}
+                        submit ={this.handleSubmitItem.bind(this)}
                       />}
                 </div>
               </div>
@@ -115,7 +117,7 @@ class ToDoList extends React.Component {
                         edit={this.handleEditItem.bind(this)}
                         listType={this.state.editingList}
                         itemToIndex={this.state.itemToEdit}
-                        submit={this.handleSubmitItem.bind(this)}
+                        submit ={this.handleSubmitItem.bind(this)}
                       />}
                 </div>
               </div>

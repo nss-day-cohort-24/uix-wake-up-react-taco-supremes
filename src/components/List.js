@@ -2,21 +2,45 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AddItem from './AddItem';
 import base from '../config/constants';
+import EditItem from './EditItem';
 
 
 class List extends React.Component{
 
-  handleSubmit(e){
-    if(e.keyCode === 13){
-      console.log("What's this event:", e.target.value);
-      let testArr = this.items;
-      let num = this.itemToIndex;
-      testArr[num] = e.target.value;
-      console.log("This is now appended: ", testArr[num]);
-  
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [],
+      loading: true,
+      printedList: true
+    };
   }
 
+  componentDidMount() {
+     base.syncState('items', {
+      context: this,
+      state: 'list',
+      asArray: true,
+      then() {
+        this.setState({ loading: false });
+      }
+    });
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    //automatically passes in nextprops and nextState
+    console.log("something changed");
+    console.log("nextProps:", nextProps, "nextState", nextState);
+    //example use: set props in local storage
+  }
+
+
+
+  handleEditItem(item, index){
+   
+    console.log("handleEditItem item:", item, "index: ", index, "this:", this);
+    
+  }
   render(){
     var styles = {
       listGroup: {
@@ -57,8 +81,16 @@ class List extends React.Component{
             onClick={this.props.edit.bind(item, index)}
             id= " "
             />
-          <input style={styles.todoItem} placeholder={item} onKeyDown= {this.handleSubmit.bind(this.props)} refs="newItem" />
-            
+  
+           
+           <input
+          type="text"
+          ref="editItem"
+          className="form-control"
+          placeholder="EditItem"
+          onKeyDown={this.props.edit.bind(item, index)}
+              />
+
           <button
             className="glyphicon glypicon-submit"
             style={styles.removeItems}

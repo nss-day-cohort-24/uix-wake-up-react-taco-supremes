@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import News from './components/news';
 import './App.css';
 import Weather from './components/Weather';
-import DateTimeDisplay from './components/Date';
+// import DateTimeDisplay from './components/Date';
 import List from './components/List';
 import base from './config/constants';
-import AddItem from './components/AddItem';
+// import AddItem from './components/AddItem';
 // import base from './config/constants';
 // import {Button} from 'reactstrap';
 
@@ -74,75 +73,83 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Taco Supremes</h1>
-        </header>
-        <div className="container">
-          <div className="row">
-            <Weather/> 
-            <DateTimeDisplay/>
+      <div className="container">
+        <div className = "row" id="header">
+          <div className = "col-8 mt-4">
+            <h2 className ="goodMorning pl-5">Good Morning! </h2>
           </div>
-          <div className="row">
-            <News />
+          <div className = 'col mb-5'>
+            <Weather/> 
           </div>
         </div>
+
+        <div className = "container">
+          <div className = "row">
+            <div className = "col">
+              <News />
+            </div>
+            <div>
+              {/* <List /> */}
+            </div>
+          </div>
+        </div>
+
       </div>
     );
-
-    const{printedList, editingList} = this.state;
-
-    if(printedList){ // Printed list
-      return (
-          <div className="container">
-          <div className="row">
-            <div className="col-sm-6 col-md-offset-3">
-              <div className="col-sm-12">
-                <h3 className="text-center"> My Todo List </h3>
-                <AddItem add={this.handleAddItem.bind(this)} />
-                {this.state.loading === true
-                  ? <h3> LOADING... </h3>
-                  : <List
-                      items={this.state.list}
-                      remove={this.handleRemoveItem.bind(this)}
-                      edit={this.handleEditItem.bind(this)}
-                      submit={this.handleSubmitItem}
-                      itemToIndex={this.state.itemToEdit}
-                    />}
-              </div>
-            </div>
-          </div>
-        </div>
-        );
-      }
-
-      else if (editingList){
-        console.log("EDITING LIST IS ON.");
-        return (
-          <div className="container">
-          <div className="row">
-            <div className="col-sm-6 col-md-offset-3">
-              <div className="col-sm-12">
-                <h3 className="text-center"> My Todo List </h3>
-                <AddItem add={this.handleAddItem.bind(this)} />
-                {this.state.loading === true
-                  ? <h3> LOADING... </h3>
-                  : <List
-                      items={this.state.list}
-                      remove={this.handleRemoveItem.bind(this)}
-                      edit={this.handleEditItem.bind(this)}
-                      listType={this.state.editingList}
-                      itemToIndex={this.state.itemToEdit}
-                      submit={this.handleSubmitItem.bind(this)}
-                    />}
-              </div>
-            </div>
-          </div>
-        </div>
-        );
-      }
   }
 }
+
+// const{printedList, editingList} = this.state;
+
+// if(printedList){ // Printed list
+//   return (
+//       <div className="container">
+//       <div className="row">
+//         <div className="col-sm-6 col-md-offset-3">
+//           <div className="col-sm-12">
+//             <h3 className="text-center"> My Todo List </h3>
+//             <AddItem add={this.handleAddItem.bind(this)} />
+//             {this.state.loading === true
+//               ? <h3> LOADING... </h3>
+//               : <List
+//                   items={this.state.list}
+//                   remove={this.handleRemoveItem.bind(this)}
+//                   edit={this.handleEditItem.bind(this)}
+//                   submit={this.handleSubmitItem}
+//                   itemToIndex={this.state.itemToEdit}
+//                 />}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     );
+//   }
+
+//   else if (editingList){
+//     console.log("EDITING LIST IS ON.");
+//     return (
+//       <div className="container">
+//       <div className="row">
+//         <div className="col-sm-6 col-md-offset-3">
+//           <div className="col-sm-12">
+//             <h3 className="text-center"> My Todo List </h3>
+//             <AddItem add={this.handleAddItem.bind(this)} />
+//             {this.state.loading === true
+//               ? <h3> LOADING... </h3>
+//               : <List
+//                   items={this.state.list}
+//                   remove={this.handleRemoveItem.bind(this)}
+//                   edit={this.handleEditItem.bind(this)}
+//                   listType={this.state.editingList}
+//                   itemToIndex={this.state.itemToEdit}
+//                   submit={this.handleSubmitItem.bind(this)}
+//                 />}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     );
+//   }
+// }
 
 export default App;

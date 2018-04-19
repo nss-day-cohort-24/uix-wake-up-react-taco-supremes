@@ -9,7 +9,9 @@ class Weather extends Component {
         this.state = {
             weatherLoaded: false,
             showResult: false,
-            error: null
+            error: null,
+            temperature: 69,
+            city: "Nashville"
         }
         this.handleChange = this
             .handleChange
@@ -46,22 +48,24 @@ class Weather extends Component {
     render() {
         return (
 
-            <div className="weather">
-                <h4>Current Weather</h4>
+            <div className="weather container">
+                    <div className=" row temp">
+                        <h5 className = 'temp mt-2 mb-0'>{this.state.temperature}</h5>
+                        {/* <h3>{this.state.image}</h3>
+                        <img src=""/> */}
+                    </div>
+                    <div>
+                        <h5 className='city mb-2'>{ "in" + ' ' + this.state.city}</h5>
+                    </div>
                     <form className="form" onSubmit={this.handleSubmit}>
                     <input
-                        className="weather-input"
+                        className=" row mt-3 weather-input"
                         value={this.state.value}
                         type="text"
-                        placeholder="  Zip-Code"onChange={this.handleChange} ></input>
-                    <button className="btn btn-primary" type="submit">Submit</button>
+                        placeholder="  Zip-Code" onChange={this.handleChange} >
+                    </input>
+                    {/* <button className=" row btn btn-primary" type="submit">Submit</button> */}
                 </form>
-                <div className="temp">
-                    <h5>{this.state.city}</h5>
-                    <h5>{this.state.temperature}</h5>
-                    <h3>{this.state.image}</h3>
-                    <img src=""/>
-                </div>
             </div>
 
         )

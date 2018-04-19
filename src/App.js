@@ -72,8 +72,10 @@ class App extends Component {
 
     console.log("Submitted for button ", index);
   }
+  
   render() {
     return (
+    <div>
       <div className="container">
         <div className = "row" id="header">
           <div className = "col-8 mt-4">
@@ -82,6 +84,8 @@ class App extends Component {
           <div className = 'col mb-5'>
             <Weather/> 
           </div>
+         </div>
+      </div>
 
           
 
@@ -97,7 +101,6 @@ class App extends Component {
           <div className="row">
             <Quote />
           </div>
-        </div>
         </div>
       </div>
     );

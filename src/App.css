@@ -6,7 +6,12 @@ h2{
   font-weight: bolder;
 }
 
-
+h3{
+  color: blue;
+  font-weight: bolder;
+  font-family: Helvetica;
+  font-size: 3em;
+}
 
 
  /* --------------------------------------- CLASSES -------------------------- */
@@ -17,6 +22,10 @@ h2{
   width: 50%;
 }
 
+.toDo{
+  border-right: 8px solid blue;
+  text-align: center;
+}
 
 
 

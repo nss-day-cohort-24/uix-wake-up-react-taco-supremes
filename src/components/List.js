@@ -95,8 +95,13 @@ class List extends React.Component{
     return (
 
       <div className="col-sm-12">
+        <h3> TO-DO: </h3>
         <ul className="list-group">
-          {listItems}
+          <li>ITEM</li>
+          <li>ITEM</li>
+          <li>ITEM</li>
+          <li>ITEM</li>
+          <li>ITEM</li>
         </ul>
       </div>
     )

@@ -16,7 +16,7 @@ class App extends Component {
     <div>
       <div className="container">
         <div className = "row" id="header">
-          <div className = "col-8 mt-4">
+          <div className = "col mt-4">
             <h2 className ="goodMorning pl-5">Good Morning! </h2>
           </div>
           <div className = 'col mb-5'>
@@ -29,11 +29,25 @@ class App extends Component {
 
         <div className = "container">
           <div className = "row">
-            <div className = "col">
-              <News />
+            <div className = "col-5 toDo">
+                <h3 className="bodyeader">TO-DO</h3>
+                  <ul>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                    <li>STUFF</li>
+                  </ul>
             </div>
-            <div>
-              {/* <List /> */}
+            <div className = "col-6">
+            <h3 className="text-center bodyHeader">NEWS</h3>
+              <News />
             </div>
           </div>
           <div className="row">

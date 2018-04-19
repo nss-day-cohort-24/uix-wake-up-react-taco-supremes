@@ -6,6 +6,7 @@ import Weather from './components/Weather';
 import List from './components/List';
 import base from './config/constants';
 import AddItem from './components/AddItem';
+import WeatherHourly from './components/WeatherHourly';
 import Quote from './components/Quote';
 import ToDoList from "./components/ToDoList"
 // import base from './config/constants';

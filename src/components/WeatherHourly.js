@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './Weather.css';
 import base from '../config/constants';
-import icons from '../shared/Icons';
-import '../Weathericons/css/weather-icons.css';
+
 
 
 const API_KEY = '7c6212572dc00aca5008de2575471183';

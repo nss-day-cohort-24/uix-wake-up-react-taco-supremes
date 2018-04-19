@@ -83,10 +83,7 @@ class App extends Component {
             <Weather/> 
           </div>
 
-          <div className="row">
-          <Quote />
-          </div>
-        </div>
+          
 
         <div className = "container">
           <div className = "row">
@@ -97,8 +94,11 @@ class App extends Component {
               {/* <List /> */}
             </div>
           </div>
+          <div className="row">
+            <Quote />
+          </div>
         </div>
-
+        </div>
       </div>
     );
   }

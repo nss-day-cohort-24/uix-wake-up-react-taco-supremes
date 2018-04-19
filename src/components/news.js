@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import news from './News.css';
 
 function NewsList(props){
     return(
         <div>
          {props.newsLoaded ?
             <span>
-               <div>{props.headline}</div>
-               <div>{props.description}</div>
-               <div><img src={props.img} alt={props.alt}/></div>
+               <h3 className = 'headline'>{props.headline}</h3>
+               <h5 className = 'description'>{props.description}</h5>
+               <img className = 'newsImage' src={props.img} alt={props.alt}/>
                {/* <Button color="info" onClick={props.showMore}>Show More</Button> */}
             </span>
             :
@@ -100,9 +101,9 @@ render(){
                 </div>
         )
         return(
-           <div className="col col-md-6">
+           <div className="">
             {articleList}
-            </div>
+           </div>
         )
     }
 }

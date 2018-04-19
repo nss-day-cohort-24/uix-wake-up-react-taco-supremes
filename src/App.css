@@ -1,54 +1,32 @@
-.App {
-  text-align: center;
+
+
+h2{
+  font-size: 2em;
+  font-family: Helvetica;
+  font-weight: bolder;
 }
 
-.App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
-  height: 80px;
+
+
+
+ /* --------------------------------------- CLASSES -------------------------- */
+
+
+
+.goodMorning{
+  width: 50%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+
+
+
+
+ /* --------------------------------------- IDS -------------------------- */
+
+ #header {
+  background-color: blue;
+  font-size: 50px;
   color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-/* Calendar display */
-
-#time {
-  font-size: 13em;
-  text-align: center;
-}
-
-#date {
-  font-size: 3.7em;
-  text-align: center;
-}
-
-#calendar {
-  font-size: 2em;
-}
-
-#calendar-status {
-  margin-top: 25px;
-}
-
-#calendar-empty {
-  margin-top: 40px;
-  font-size: 2em;
-  text-align: center;
+  text-align: left;
 }
 

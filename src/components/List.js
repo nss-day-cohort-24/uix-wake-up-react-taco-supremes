@@ -13,8 +13,7 @@ class List extends React.Component{
       let num = this.itemToIndex;
       testArr[num] = e.target.value;
       console.log("This is now appended: ", testArr[num]);
-      
-      
+  
     }
   }
 
@@ -94,6 +93,7 @@ class List extends React.Component{
 
 
     return (
+
       <div className="col-sm-12">
         <ul className="list-group">
           {listItems}

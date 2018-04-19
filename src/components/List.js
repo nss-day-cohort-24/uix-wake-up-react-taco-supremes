@@ -96,7 +96,6 @@ class List extends React.Component{
 
       <div className="col-sm-12">
         <ul className="list-group">
-          {listItems}
         </ul>
       </div>
     )

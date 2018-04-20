@@ -60,7 +60,7 @@ render(){
         return(
             <div>
                 <p className="quote">
-                    {this.state.quoteText} &mdash;{this.state.quoteAuthor}
+                    {quoteText} &mdash;{quoteAuthor}
                 </p>
             </div>
         )

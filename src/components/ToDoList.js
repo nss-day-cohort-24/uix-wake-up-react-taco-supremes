@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
-import News from './news';
+import React from 'react';
 import '../App.css';
-import Weather from './Weather';
-import DateTimeDisplay from './Date';
 import List from './List';
 import {rebase} from '../config/constants';
 import AddItem from './AddItem';

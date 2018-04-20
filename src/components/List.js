@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import AddItem from './AddItem';
-import rebase from '../config/constants';
-
+import {rebase} from '../config/constants';
+import EditItem from './EditItem';
 
 class List extends React.Component{
 
@@ -42,10 +40,7 @@ class List extends React.Component{
     item.newList = item.collection;
     let index = item.index;
     item.newList[index] = item.item; 
-
     console.log("Collection in handleEditItem:", item.newList);
-    var newList = this.props.list;
-
     this.setState({
         list: item.newList  
     });

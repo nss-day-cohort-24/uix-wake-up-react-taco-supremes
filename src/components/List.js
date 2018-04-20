@@ -51,7 +51,7 @@ class List extends React.Component{
     //       className="form-control"
     //       placeholder="EditItem"
     //       onKeyDown={this.props.edit.bind(item, index)}
-    //           />
+    //           /> 
     // )
   }
   render(){

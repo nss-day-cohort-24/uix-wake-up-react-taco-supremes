@@ -39,14 +39,17 @@ class List extends React.Component{
 
 
   handleEditItem(item){
-   
-      console.log("LOOK AT this:", item, "this.props.list:", this.props.list);
-      var newList = this.props.list;
 
-      this.setState({
-          list: newList
-          
-      });
+    item.newList = item.collection;
+    let index = item.index;
+    item.newList[index] = item.item; 
+
+    console.log("Collection in handleEditItem:", item.newList);
+    var newList = this.props.list;
+
+    this.setState({
+        list: item.newList  
+    });
     
   }
 

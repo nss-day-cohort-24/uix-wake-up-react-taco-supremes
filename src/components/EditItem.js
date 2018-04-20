@@ -5,10 +5,17 @@ class EditItem extends React.Component{
   handleSubmit(e){
     if(e.keyCode === 13){
       //console.log("EditItem handleSubmit() --> ", ReactDOM.findDOMNode(this.refs.items).value);
-      console.log("Props: ", this.props.items);
+      console.log("Props: ", this.props);
       console.log("handleSubmit edit, what's this:", this.refs.editItem);
       console.log("So this is that ReactDOM thing", ReactDOM.findDOMNode(this.refs.editItem).value);
-      this.props.edit(ReactDOM.findDOMNode(this.refs.editItem).value);
+      let data =  {
+        index: this.props.itemToIndex,
+        collection: this.props.item,
+        item: ReactDOM.findDOMNode(this.refs.editItem).value
+
+      };
+      
+      this.props.edit(data);
       ReactDOM.findDOMNode(this.refs.editItem).value = '';
     }
   }

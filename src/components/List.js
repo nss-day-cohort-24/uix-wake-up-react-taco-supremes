@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AddItem from './AddItem';
-import base from '../config/constants';
-import EditItem from './EditItem';
+import rebase from '../config/constants';
 
 
 class List extends React.Component{
@@ -17,7 +16,7 @@ class List extends React.Component{
   }
 
   componentDidMount() {
-     base.syncState('items', {
+     rebase.syncState('items', {
       context: this,
       state: 'list',
       asArray: true,

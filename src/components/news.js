@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import news from './News.css';
+import './News.css';
 
 function NewsList(props){
     return(

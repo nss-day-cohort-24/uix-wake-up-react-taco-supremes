@@ -5,7 +5,7 @@ import '../App.css';
 import Weather from './Weather';
 import DateTimeDisplay from './Date';
 import List from './List';
-import base from '../config/constants';
+import {rebase} from '../config/constants';
 import AddItem from './AddItem';
 
 class ToDoList extends React.Component {
@@ -20,7 +20,7 @@ class ToDoList extends React.Component {
     }
   
     componentDidMount() {
-       base.syncState('items', {
+       rebase.syncState('items', {
         context: this,
         state: 'list',
         asArray: true,

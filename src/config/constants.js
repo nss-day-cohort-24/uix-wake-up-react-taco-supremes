@@ -10,7 +10,9 @@ const config = {
 }
 
 const app = firebase.initializeApp(config)
-const base = Rebase.createClass(app.database())
 
 
-export default base;
+export const rebase = Rebase.createClass(app.database());
+
+// //add the authProvides your app needs: google, facebook, twitter, github,
+export const googleProvider = new firebase.auth.GoogleAuthProvider();

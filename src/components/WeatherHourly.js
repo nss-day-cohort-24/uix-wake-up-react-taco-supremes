@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Weather.css';
-import base from '../config/constants';
+import rebase from '../config/constants';
 
 
 

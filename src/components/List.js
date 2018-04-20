@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AddItem from './AddItem';
-import base from '../config/constants';
+import rebase from '../config/constants';
 
 
 class List extends React.Component{

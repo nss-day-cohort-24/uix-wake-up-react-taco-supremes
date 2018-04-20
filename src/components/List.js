@@ -25,6 +25,8 @@ class List extends React.Component{
         this.setState({ loading: false });
       }
     });
+
+    this.handleEditItem = this.handleEditItem.bind(this);
   }
 
   componentWillUpdate(nextProps, nextState){
@@ -38,7 +40,13 @@ class List extends React.Component{
 
   handleEditItem(item){
    
-    console.log("handleEditItem this:", item);
+      console.log("LOOK AT this:", item, "this.props.list:", this.props.list);
+      var newList = this.props.list;
+
+      this.setState({
+          list: newList
+          
+      });
     
   }
 

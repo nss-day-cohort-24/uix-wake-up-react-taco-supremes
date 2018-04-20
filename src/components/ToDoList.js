@@ -38,6 +38,7 @@ class ToDoList extends React.Component {
     }
   
     handleAddItem(newItem) {
+      console.log("add Item:", newItem);
       this.setState({
         list: this.state.list.concat([newItem])
       });
@@ -62,7 +63,7 @@ class ToDoList extends React.Component {
     handleEditItem(index){
       // edit the list item
       
-      console.log("index", index, "editingList: ", this.state.editingList);
+      console.log("index", index, "word", this.refs.value);
       var newList = this.state.list;
       this.setState({
           list: newList,

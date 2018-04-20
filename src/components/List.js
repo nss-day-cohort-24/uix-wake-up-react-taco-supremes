@@ -36,23 +36,15 @@ class List extends React.Component{
 
 
 
-  handleEditItem(item, index){
+  handleEditItem(item){
    
-    console.log("handleEditItem item:", item, "index: ", index, "this:", this);
+    console.log("handleEditItem this:", item);
     
   }
 
   renderInputBox(){
 
-    // return(
-    //  <input
-    //       type="text"
-    //       ref="editItem"
-    //       className="form-control"
-    //       placeholder="EditItem"
-    //       onKeyDown={this.props.edit.bind(item, index)}
-    //           /> 
-    // )
+    
   }
   render(){
     var styles = {
@@ -94,7 +86,12 @@ class List extends React.Component{
             onClick={this.props.edit.bind(item, index)}
             id= " "
             />
-  
+
+          <EditItem 
+            edit ={this.handleEditItem.bind(this)} 
+            item={this.props.items} 
+            itemToIndex ={this.props.itemToIndex} 
+            onKeyDown={this.props.items}/>
            
           
 

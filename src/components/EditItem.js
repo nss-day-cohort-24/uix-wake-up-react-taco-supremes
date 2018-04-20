@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 class EditItem extends React.Component{
   handleSubmit(e){
     if(e.keyCode === 13){
-      console.log("EditItem handleSubmit() --> ", ReactDOM.findDOMNode(this.refs.editItem).value);
-      
+      console.log("EditItem handleSubmit() --> ", ReactDOM.findDOMNode(this.refs.items).value);
+      console.log("Props: ", this.props.items);
       this.props.edit(ReactDOM.findDOMNode(this.refs.editItem).value);
       ReactDOM.findDOMNode(this.refs.editItem).value = '';
     }

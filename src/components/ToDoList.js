@@ -14,7 +14,8 @@ class ToDoList extends React.Component {
       this.state = {
         list: [],
         loading: true,
-        printedList: true
+        printedList: true,
+        editingList: false
       };
     }
   
@@ -56,12 +57,19 @@ class ToDoList extends React.Component {
 
       console.log("Whatever");
     }
-    handleEditItem(e){
+
+
+    handleEditItem(index){
       // edit the list item
-      if(e.keyCode === 13){
-        
-    }
-  
+      
+      console.log("index", index, "editingList: ", this.state.editingList);
+      var newList = this.state.list;
+      this.setState({
+          list: newList,
+          editingList: true,
+          printedList: false, 
+          itemToEdit: index
+      });
     }
   
     render() {

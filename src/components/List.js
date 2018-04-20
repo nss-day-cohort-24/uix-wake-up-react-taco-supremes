@@ -1,22 +1,53 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import AddItem from './AddItem';
-import rebase from '../config/constants';
-
+import {rebase} from '../config/constants';
+import EditItem from './EditItem';
 
 class List extends React.Component{
 
-  handleSubmit(e){
-    if(e.keyCode === 13){
-      console.log("What's this event:", e.target.value);
-      let testArr = this.items;
-      let num = this.itemToIndex;
-      testArr[num] = e.target.value;
-      console.log("This is now appended: ", testArr[num]);
-  
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [],
+      loading: true,
+      printedList: true
+    };
   }
 
+  componentDidMount() {
+     rebase.syncState('items', {
+      context: this,
+      state: 'list',
+      asArray: true,
+      then() {
+        this.setState({ loading: false });
+      }
+    });
+
+    this.handleEditItem = this.handleEditItem.bind(this);
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    console.log ("List.js - Updated.");
+  }
+
+
+
+  handleEditItem(item){
+
+    item.newList = item.collection;
+    let index = item.index;
+    item.newList[index] = item.item; 
+    console.log("Collection in handleEditItem:", item.newList);
+    this.setState({
+        list: item.newList  
+    });
+    
+  }
+
+  renderInputBox(){
+
+    
+  }
   render(){
     var styles = {
       listGroup: {
@@ -57,8 +88,15 @@ class List extends React.Component{
             onClick={this.props.edit.bind(item, index)}
             id= " "
             />
-          <input style={styles.todoItem} placeholder={item} onKeyDown= {this.handleSubmit.bind(this.props)} refs="newItem" />
-            
+
+          <EditItem 
+            edit ={this.handleEditItem.bind(this)} 
+            item={this.props.items} 
+            itemToIndex ={this.props.itemToIndex} 
+            onKeyDown={this.props.items}/>
+           
+          
+
           <button
             className="glyphicon glypicon-submit"
             style={styles.removeItems}
@@ -96,6 +134,7 @@ class List extends React.Component{
 
       <div className="col-sm-12">
         <ul className="list-group">
+          {listItems}
         </ul>
       </div>
     )

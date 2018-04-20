@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 class AddItem extends React.Component{
   handleSubmit(e){
     if(e.keyCode === 13){
-      
-      console.log("What's in refs", this.refs.newItem);
-      console.log("What's this:", this);
+
       this.props.add(ReactDOM.findDOMNode(this.refs.newItem).value);
       ReactDOM.findDOMNode(this.refs.newItem).value = '';
     }

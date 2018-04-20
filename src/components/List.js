@@ -27,10 +27,7 @@ class List extends React.Component{
   }
 
   componentWillUpdate(nextProps, nextState){
-    //automatically passes in nextprops and nextState
-    console.log("something changed");
-    console.log("nextProps:", nextProps, "nextState", nextState);
-    //example use: set props in local storage
+    console.log ("List.js - Updated.");
   }
 
 

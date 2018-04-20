@@ -27,14 +27,11 @@ class ToDoList extends React.Component {
     }
   
     componentWillUpdate(nextProps, nextState){
-      //automatically passes in nextprops and nextState
-      console.log("something changed");
-      console.log("nextProps:", nextProps, "nextState", nextState);
-      //example use: set props in local storage
+      console.log ("ToDoList.js - Updated.");
     }
   
     handleAddItem(newItem) {
-      console.log("add Item:", newItem);
+      
       this.setState({
         list: this.state.list.concat([newItem])
       });
@@ -59,7 +56,7 @@ class ToDoList extends React.Component {
     handleEditItem(index){
       // edit the list item
       
-      console.log("index", index, "word", this.refs.value);
+      
       var newList = this.state.list;
       this.setState({
           list: newList,
@@ -98,7 +95,6 @@ class ToDoList extends React.Component {
         }
   
         else if (editingList){
-          console.log("EDITING LIST IS ON.");
           return (
             <div className="container">
             <div className="row">

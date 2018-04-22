@@ -8,11 +8,10 @@ function NewsList(props){
             <div  className = 'container'>
              <div className="row">
                <div className='col headline'>               
-                <h4>{props.headline}</h4>
-                {/* <h5 className = 'description'>{props.description}</h5> */}
+                <h4><a href={props.link} target="_blank">{props.headline}</a></h4>
               </div>
               <div>
-                <img className = 'newsImage' src={props.img} alt={props.alt}/>
+                <a href={props.link} target="_blank"><img className = 'newsImage' src={props.img} alt={props.alt}/></a>
               </div>
                 {/* <Button color="info" onClick={props.showMore}>Show More</Button> */}
              </div>
@@ -101,9 +100,9 @@ render(){
                     <NewsList 
                     newsLoaded={newsLoaded} 
                     headline={article.title}
-                    description={article.description}
                     img={article.urlToImage}
-                    alt={article.description} />
+                    alt={article.description}
+                    link={article.url} />
                 </div>
         )
         return(

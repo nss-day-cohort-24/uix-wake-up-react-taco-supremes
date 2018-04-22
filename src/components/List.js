@@ -1,7 +1,6 @@
 import React from 'react';
 import {rebase} from '../config/constants';
 import EditItem from './EditItem';
-
 class List extends React.Component{
 
   constructor(props) {
@@ -77,13 +76,13 @@ class List extends React.Component{
           // CONTENT GOES HERE.
           <li key={index} className="list-group-item" style={styles.listGroup}>
           <button
-            className="glyphicon glyphicon-remove"
+            className="far fa-trash-alt"
             style={styles.removeItems}
             onClick={this.props.remove.bind(null, index)}
           />
           
           <button
-            className="glyphicon glyphicon-edit"
+            className="far fa-edit"
             style={styles.removeItems}
             onClick={this.props.edit.bind(item, index)}
             id= " "
@@ -98,10 +97,10 @@ class List extends React.Component{
           
 
           <button
-            className="glyphicon glypicon-submit"
+            className="btn btn-primary my-1"
             style={styles.removeItems}
             onClick = {this.props.submit.bind(item, index)}
-            />
+            >Submit</button>
         </li>
 
         );
@@ -110,13 +109,13 @@ class List extends React.Component{
       return (
         <li key={index} className="list-group-item" style={styles.listGroup}>
           <button
-            className="glyphicon glyphicon-remove"
+            className="far fa-trash-alt"
             style={styles.removeItems}
             onClick={this.props.remove.bind(null, index)}
           />
           
           <button
-            className="glyphicon glyphicon-edit"
+            className="far fa-edit"
             style={styles.removeItems}
             onClick={this.props.edit.bind(item, index)}
             id= " "
@@ -132,7 +131,7 @@ class List extends React.Component{
 
     return (
 
-      <div className="col-sm-12">
+      <div>
         <ul className="list-group">
           {listItems}
         </ul>

@@ -12,13 +12,21 @@
     box-shadow: 11px -8px 0px 0px rgba(0,0,0);
 }
 
+.newsList:nth-child(odd) a{
+    color: white;
+}
+
 .newsList:nth-child(even){
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.newsList:nth-child(even) a{
+    color: black;
 }
 
 h4{
@@ -32,4 +40,3 @@ h4{
     justify-content: center;
     align-items: center;
 }
-

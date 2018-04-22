@@ -74,8 +74,6 @@ class ToDoList extends React.Component {
         return (
             <div className="container">
             <div className="row">
-              <div className="col-sm-6 col-md-offset-3">
-                <div className="col-sm-12">
                   <h3 className="text-center"> My Todo List </h3>
                   <AddItem add={this.handleAddItem.bind(this)} />
                   {this.state.loading === true
@@ -87,8 +85,6 @@ class ToDoList extends React.Component {
                         itemToIndex={this.state.itemToEdit}
                         submit ={this.handleSubmitItem.bind(this)}
                       />}
-                </div>
-              </div>
             </div>
           </div>
           );
@@ -98,12 +94,10 @@ class ToDoList extends React.Component {
           return (
             <div className="container">
             <div className="row">
-              <div className="col-sm-6 col-md-offset-3">
-                <div className="col-sm-12">
                   <h3 className="text-center"> My Todo List </h3>
                   <AddItem add={this.handleAddItem.bind(this)} />
                   {this.state.loading === true
-                    ? <h3> LOADING... </h3>
+                    ? <p> LOADING... </p>
                     : <List
                         items={this.state.list}
                         remove={this.handleRemoveItem.bind(this)}
@@ -112,8 +106,6 @@ class ToDoList extends React.Component {
                         itemToIndex={this.state.itemToEdit}
                         submit ={this.handleSubmitItem.bind(this)}
                       />}
-                </div>
-              </div>
             </div>
           </div>
           );

@@ -21,7 +21,7 @@ class EditItem extends React.Component{
   }
   render(){
     return (
-      <div className="col-sm-12 text-center">
+      <div>
         <input
           type="text"
           ref="editItem"

@@ -24,9 +24,12 @@ h3{
 
 .toDo{
   border-right: 8px solid blue;
-  text-align: center;
 }
 
+.btn-primary{
+  background-color: blue;
+  border-color: blue;
+}
 
 
 

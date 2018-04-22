@@ -76,7 +76,7 @@ class List extends React.Component{
           // CONTENT GOES HERE.
           <li key={index} className="list-group-item" style={styles.listGroup}>
           <button
-            className="fas fa-times"
+            className="far fa-trash-alt"
             style={styles.removeItems}
             onClick={this.props.remove.bind(null, index)}
           />
@@ -109,7 +109,7 @@ class List extends React.Component{
       return (
         <li key={index} className="list-group-item" style={styles.listGroup}>
           <button
-            className="fas fa-times"
+            className="far fa-trash-alt"
             style={styles.removeItems}
             onClick={this.props.remove.bind(null, index)}
           />

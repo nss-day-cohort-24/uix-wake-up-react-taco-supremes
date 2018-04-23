@@ -11,7 +11,7 @@ function NewsList(props){
                 <h4><a href={props.link} target="_blank">{props.headline}</a></h4>
               </div>
               <div>
-                <a href={props.link} target="_blank"><img className = 'newsImage' src={props.img} alt={props.alt}/></a>
+                <a href={props.link} target="_blank"><img className = 'img-fluid newsImage' src={props.img} alt={props.alt}/></a>
               </div>
                 {/* <Button color="info" onClick={props.showMore}>Show More</Button> */}
              </div>
@@ -95,7 +95,8 @@ render(){
         return (<div>Loading the Top News from NewsAPI.org...</div>)
     } else{
         let articles = objResult;
-        let articleList = articles.map((article, index) => 
+        let filterArticle = articles.filter(article => article.urlToImage != null);
+        let articleList = filterArticle.map((article, index) =>  
                 <div className="newsList" key={index}>
                     <NewsList 
                     newsLoaded={newsLoaded} 
@@ -107,6 +108,7 @@ render(){
         )
         return(
            <div>
+           {console.log("articles list: ", articleList)}
             {articleList}
            </div>
         )

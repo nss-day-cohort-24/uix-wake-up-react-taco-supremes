@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 import { loginWithGoogle, logout  } from '../config/auth';
 import {rebase} from '../config/constants';
  
@@ -14,6 +15,8 @@ class Login extends Component {
             loading: true,
             uid: null,
             zip: '',
+            displayNone: null,
+            display: "none"
           }
 
           this.authenticate = this.authenticate.bind(this);
@@ -30,6 +33,8 @@ class Login extends Component {
               authed: true,
               loading: false,
               uid: user.uid,
+              displayNone: "none",
+              display: null
             });
             //get DB stuff for user here
           } else {
@@ -63,12 +68,15 @@ class Login extends Component {
       }
 
     render() {
+
+      const{displayNone}= this.state;
         return(
             <div className="logIn">
-                <button type="button" onClick={() => this.authenticate('google')} className="btn btn-outline-primary btn-lg">G Login</button>
+                <button style={{display: this.state.displayNone}} type="button" onClick={() => this.authenticate('google')} className="btn btn-outline-light btn-lg">G Login</button>
+                <button style={{display: this.state.display}} type="button" onClick={() => this.authenticate('google')} className="btn btn-outline-light btn-lg">G Logout</button>
             </div>
         )
     }
-}
+} 
 
 export default Login;

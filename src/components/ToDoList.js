@@ -11,7 +11,8 @@ class ToDoList extends React.Component {
         list: [],
         loading: true,
         printedList: true,
-        editingList: false
+        editingList: false,
+        uid: this.props.uid
       };
     }
   
@@ -21,13 +22,14 @@ class ToDoList extends React.Component {
         state: 'list',
         asArray: true,
         then() {
-          this.setState({ loading: false });
+          this.setState({ loading: false, uid: this.props.uid });
         }
       });
     }
   
     componentWillUpdate(nextProps, nextState){
-      console.log ("ToDoList.js - Updated.");
+      console.log ("ToDoList.js - Updated. This, in ToDoList.js", this.props.uid);
+      
     }
   
     handleAddItem(newItem) {
@@ -84,6 +86,7 @@ class ToDoList extends React.Component {
                         edit={this.handleEditItem.bind(this)}
                         itemToIndex={this.state.itemToEdit}
                         submit ={this.handleSubmitItem.bind(this)}
+                        uid = {this.state.uid}
                       />}
             </div>
           </div>
@@ -105,6 +108,7 @@ class ToDoList extends React.Component {
                         listType={this.state.editingList}
                         itemToIndex={this.state.itemToEdit}
                         submit ={this.handleSubmitItem.bind(this)}
+                        uid = {this.state.uid}
                       />}
             </div>
           </div>

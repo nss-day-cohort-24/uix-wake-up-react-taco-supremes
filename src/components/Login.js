@@ -6,20 +6,7 @@ import {rebase} from '../config/constants';
 class Login extends Component {
 
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            authed: false,
-            loading: true,
-            uid: null,
-            zip: '',
-          }
-
-          this.authenticate = this.authenticate.bind(this);
-          this.logoutApp = this.logoutApp.bind(this);
-
-    }
+    
 
     componentDidMount () {
         console.log("login mounted");
@@ -31,6 +18,8 @@ class Login extends Component {
               loading: false,
               uid: user.uid,
             });
+            
+            console.log("Props updated?", this.props.uid);
             //get DB stuff for user here
           } else {
             this.setState({
@@ -54,6 +43,8 @@ class Login extends Component {
             this.setState({
                 authed: true
             });
+            
+            console.log("Authenticate: ", this);
         });
       }
 

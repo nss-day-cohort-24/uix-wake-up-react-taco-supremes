@@ -47,7 +47,7 @@ h3{
 }
 
 #newsDiv{
-  height: 100vh;
+  height: calc(100vh - 350px);
   overflow: scroll;
 
 }

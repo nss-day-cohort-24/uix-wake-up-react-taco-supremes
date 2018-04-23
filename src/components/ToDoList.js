@@ -17,12 +17,14 @@ class ToDoList extends React.Component {
     }
   
     componentDidMount() {
+      console.log("uid in ToDoList", this.props.uid);
        rebase.syncState('items', {
         context: this,
         state: 'list',
         asArray: true,
+        uid: this.props.uid,
         then() {
-          this.setState({ loading: false, uid: this.props.uid });
+          this.setState({ loading: false });
         }
       });
     }

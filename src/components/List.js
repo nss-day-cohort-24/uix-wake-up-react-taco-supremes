@@ -33,7 +33,7 @@ class List extends React.Component{
 
 
   handleEditItem(item){
-
+    console.log("item contains:", item);
     item.newList = item.collection;
     let index = item.index;
     item.newList[index] = item.item; 

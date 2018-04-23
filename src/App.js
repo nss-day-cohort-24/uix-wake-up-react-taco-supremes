@@ -10,14 +10,16 @@ import Login from './components/Login';
 class App extends Component {
   render() {
     return (
+
+
     <div id="masterContainer">
       <div className="container">
         <div className = "row" id="header">
-          <div className = "col mt-4">
+          <div className = "col-lg mt-4">
             <h2 className ="goodMorning pl-5">Good Morning! </h2>
             <Login />
           </div>
-          <div className = 'col mb-5'>
+          <div className = 'col-lg mb-5'>
             <Weather/> 
           </div>
          </div>
@@ -44,6 +46,8 @@ class App extends Component {
           </div>
         </footer>
       </div>
+
+
     );
   }
 }

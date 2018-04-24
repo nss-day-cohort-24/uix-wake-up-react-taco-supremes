@@ -8,7 +8,8 @@ class List extends React.Component{
     this.state = {
       list: [],
       loading: true,
-      printedList: true
+      printedList: true,
+      uid: this.props.uid,
     };
   }
 
@@ -18,7 +19,7 @@ class List extends React.Component{
       state: 'list',
       asArray: true,
       then() {
-        this.setState({ loading: false });
+        this.setState({ loading: false, uid: this.props.uid });
       }
     });
 
@@ -26,20 +27,21 @@ class List extends React.Component{
   }
 
   componentWillUpdate(nextProps, nextState){
-    console.log ("List.js - Updated.");
+    console.log ("List.js - Updated. UID shows this:", this.props.uid);
   }
 
 
 
   handleEditItem(item){
-
+    console.log("item contains:", item);
     item.newList = item.collection;
     let index = item.index;
     item.newList[index] = item.item; 
-    console.log("Collection in handleEditItem:", item.newList);
     this.setState({
-        list: item.newList  
+      list: item.newList,
+      uid: this.props.uid 
     });
+    console.log("Collection in handleEditItem:", item.newList, "UID", this.state.uid);
     
   }
 
@@ -72,6 +74,7 @@ class List extends React.Component{
     var listItems = this.props.items.map((item, index) => {
 
       if((this.props.listType === true) && (index === this.props.itemToIndex)){
+        console.log("UID:", this.state.uid);
         return(
           // CONTENT GOES HERE.
           <li key={index} className="list-group-item" style={styles.listGroup}>
@@ -92,7 +95,9 @@ class List extends React.Component{
             edit ={this.handleEditItem.bind(this)} 
             item={this.props.items} 
             itemToIndex ={this.props.itemToIndex} 
-            onKeyDown={this.props.items}/>
+            onKeyDown={this.props.items}
+            uid= {this.state.uid}/>
+            
            
           
 

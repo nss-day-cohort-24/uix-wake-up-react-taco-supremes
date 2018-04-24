@@ -11,15 +11,18 @@ class ToDoList extends React.Component {
         list: [],
         loading: true,
         printedList: true,
-        editingList: false
+        editingList: false,
+        uid: this.props.uid
       };
     }
   
     componentDidMount() {
+      console.log("uid in ToDoList", this.props.uid);
        rebase.syncState('items', {
         context: this,
         state: 'list',
         asArray: true,
+        uid: this.props.uid,
         then() {
           this.setState({ loading: false });
         }
@@ -27,7 +30,8 @@ class ToDoList extends React.Component {
     }
   
     componentWillUpdate(nextProps, nextState){
-      console.log ("ToDoList.js - Updated.");
+      console.log ("ToDoList.js - Updated. This, in ToDoList.js", this.props.uid);
+      
     }
   
     handleAddItem(newItem) {
@@ -73,17 +77,18 @@ class ToDoList extends React.Component {
       if(printedList){ // Printed list
         return (
             <div>
-              <h3 className="text-center"> TO DO </h3>
-              <AddItem add={this.handleAddItem.bind(this)} />
-              {this.state.loading === true
-                ? <h3> LOADING... </h3>
-                : <List
-                    items={this.state.list}
-                    remove={this.handleRemoveItem.bind(this)}
-                    edit={this.handleEditItem.bind(this)}
-                    itemToIndex={this.state.itemToEdit}
-                    submit ={this.handleSubmitItem.bind(this)}
-                  />}
+                  <h3 className="text-center"> My Todo List </h3>
+                  <AddItem add={this.handleAddItem.bind(this)} />
+                  {this.state.loading === true
+                    ? <h3> LOADING... </h3>
+                    : <List
+                        items={this.state.list}
+                        remove={this.handleRemoveItem.bind(this)}
+                        edit={this.handleEditItem.bind(this)}
+                        itemToIndex={this.state.itemToEdit}
+                        submit ={this.handleSubmitItem.bind(this)}
+                        uid = {this.state.uid}
+                      />}
           </div>
           );
         }
@@ -102,6 +107,7 @@ class ToDoList extends React.Component {
                         listType={this.state.editingList}
                         itemToIndex={this.state.itemToEdit}
                         submit ={this.handleSubmitItem.bind(this)}
+                        uid = {this.state.uid}
                       />}
           </div>
           );

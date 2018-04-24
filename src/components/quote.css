@@ -1,0 +1,24 @@
+
+h2{
+    font-size: 2em;
+    font-family: Helvetica;
+    font-weight: bolder;
+  }
+
+
+#quote{
+    color: white;
+    font-family: Helvetica;
+}
+
+p{
+    font-family: 'Lantinghei TC';
+    font-weight: lighter;
+    color:white;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+#quoteContainer{
+    background-color: blue;
+}

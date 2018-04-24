@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+// import '../App.css';
 import List from './List';
 import {rebase} from '../config/constants';
 import AddItem from './AddItem';
@@ -72,28 +72,25 @@ class ToDoList extends React.Component {
   
       if(printedList){ // Printed list
         return (
-            <div className="container">
-            <div className="row">
-                  <h3 className="text-center"> My Todo List </h3>
-                  <AddItem add={this.handleAddItem.bind(this)} />
-                  {this.state.loading === true
-                    ? <h3> LOADING... </h3>
-                    : <List
-                        items={this.state.list}
-                        remove={this.handleRemoveItem.bind(this)}
-                        edit={this.handleEditItem.bind(this)}
-                        itemToIndex={this.state.itemToEdit}
-                        submit ={this.handleSubmitItem.bind(this)}
-                      />}
-            </div>
+            <div>
+              <h3 className="text-center"> TO DO </h3>
+              <AddItem add={this.handleAddItem.bind(this)} />
+              {this.state.loading === true
+                ? <h3> LOADING... </h3>
+                : <List
+                    items={this.state.list}
+                    remove={this.handleRemoveItem.bind(this)}
+                    edit={this.handleEditItem.bind(this)}
+                    itemToIndex={this.state.itemToEdit}
+                    submit ={this.handleSubmitItem.bind(this)}
+                  />}
           </div>
           );
         }
   
         else if (editingList){
           return (
-            <div className="container">
-            <div className="row">
+            <div >
                   <h3 className="text-center"> My Todo List </h3>
                   <AddItem add={this.handleAddItem.bind(this)} />
                   {this.state.loading === true
@@ -106,7 +103,6 @@ class ToDoList extends React.Component {
                         itemToIndex={this.state.itemToEdit}
                         submit ={this.handleSubmitItem.bind(this)}
                       />}
-            </div>
           </div>
           );
         }

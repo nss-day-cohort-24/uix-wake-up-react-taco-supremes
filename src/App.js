@@ -80,13 +80,13 @@ return rebase.initializedApp.auth().signInWithPopup(googleProvider)
 
           
 
-        <div  id="newsDiv" className = "container">
+        <div   className = "container">
           <div className = "row">
 
             <div className = "col-5 toDo">
                 <ToDoList uid={this.state.uid} />
             </div>
-            <div id="news" className = " pl-5 pr-0 col-6">
+            <div id="newsDiv"  className = " pl-5 pr-0 col-6">
             <h3 className="text-center bodyHeader">NEWS</h3>
               <News />
             </div>

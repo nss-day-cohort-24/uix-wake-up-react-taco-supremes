@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import quote from './quote.css';
 
 class Quote extends Component {
 
@@ -58,10 +59,15 @@ render(){
     } else{
         
         return(
-            <div>
-                <p className="quote">
-                    {quoteText} &mdash;{quoteAuthor}
-                </p>
+            <div id="quoteContainer" className='container'>
+                <div id="quote" className ='row pl-5 mt-2'>
+                     <h2 id="quoteHeader">Think about it</h2>
+                </div>
+                <div className="row pl-5 mb-2">
+                    <p className="quote">
+                        {quoteText} &mdash;{quoteAuthor}
+                    </p>
+                </div>
             </div>
         )
     }

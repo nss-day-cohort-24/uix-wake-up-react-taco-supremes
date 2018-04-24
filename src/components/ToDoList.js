@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+// import '../App.css';
 import List from './List';
 import {rebase} from '../config/constants';
 import AddItem from './AddItem';
@@ -76,8 +76,7 @@ class ToDoList extends React.Component {
   
       if(printedList){ // Printed list
         return (
-            <div className="container">
-            <div className="row">
+            <div>
                   <h3 className="text-center"> My Todo List </h3>
                   <AddItem add={this.handleAddItem.bind(this)} />
                   {this.state.loading === true
@@ -90,15 +89,13 @@ class ToDoList extends React.Component {
                         submit ={this.handleSubmitItem.bind(this)}
                         uid = {this.state.uid}
                       />}
-            </div>
           </div>
           );
         }
   
         else if (editingList){
           return (
-            <div className="container">
-            <div className="row">
+            <div >
                   <h3 className="text-center"> My Todo List </h3>
                   <AddItem add={this.handleAddItem.bind(this)} />
                   {this.state.loading === true
@@ -112,7 +109,6 @@ class ToDoList extends React.Component {
                         submit ={this.handleSubmitItem.bind(this)}
                         uid = {this.state.uid}
                       />}
-            </div>
           </div>
           );
         }

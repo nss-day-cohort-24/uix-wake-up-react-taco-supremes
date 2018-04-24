@@ -66,27 +66,29 @@ return rebase.initializedApp.auth().signInWithPopup(googleProvider)
 
 
     <div id="masterContainer">
-      <div className="container">
-        <div className = "row" id="header">
-          <div className = "col-lg mt-4">
-            <h2 className ="goodMorning pl-5">Good Morning! </h2>
-            <Login uid ={this.state}/>
+      <div id="header"  className="container">
+        <div  className = "row">
+          <div id="goodMorning" className = "w-25 col-lg-6">
+            <h2  className ="pt-5">Good Morning! </h2>
           </div>
-          <div className = 'col-lg mb-5'>
+          <div id="weather" className="col-lg-5 ">
             <Weather/> 
+          </div>
+          <div id="login" className="col-lg-1 ">
+              <Login />
           </div>
          </div>
       </div>
 
           
 
-        <div   className = "container">
+        <div id="newsAndToDo"  className = "container">
           <div className = "row">
 
             <div className = "col-5 toDo">
                 <ToDoList uid={this.state.uid} />
             </div>
-            <div id="newsDiv"  className = " pl-5 pr-0 col-6">
+            <div id="newsDiv"  className = " pl-5 pr-0 col">
             <h3 className="text-center bodyHeader">NEWS</h3>
               <News />
             </div>

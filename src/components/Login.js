@@ -36,6 +36,8 @@ class Login extends Component {
               displayNone: "none",
               display: null
             });
+            
+            console.log("Props updated?", this.props.uid);
             //get DB stuff for user here
           } else {
             this.setState({
@@ -59,6 +61,8 @@ class Login extends Component {
             this.setState({
                 authed: true
             });
+            
+            console.log("Authenticate: ", this);
         });
       }
 

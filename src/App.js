@@ -66,15 +66,15 @@ return rebase.initializedApp.auth().signInWithPopup(googleProvider)
 
 
     <div id="masterContainer">
-      <div id="header"  className="container">
+      <div id="header"  className="container justify-content-center">
         <div  className = "row">
-          <div id="goodMorning" className = "col-5 text-center">
+          <div id="goodMorning" className = "col-4 offset-1 text-center">
             <h2 >Good<br /> Morning! </h2>
           </div>
           <div id="weather" className=" col-5">
           <Weather/> 
           </div>
-          <div id="login" className=" col-2">
+          <div id="login" className="col-2 mt-4">
               <Login />
           </div>
          </div>
@@ -89,7 +89,7 @@ return rebase.initializedApp.auth().signInWithPopup(googleProvider)
                 <ToDoList uid={this.state.uid} />
             </div>
             <div id="newsDiv"  className = " pl-5 pr-0 col">
-            <h3 className="text-center bodyHeader">NEWS</h3>
+            <h3 className="text-center bodyHeader mt-3">NEWS</h3>
               <News />
             </div>
 

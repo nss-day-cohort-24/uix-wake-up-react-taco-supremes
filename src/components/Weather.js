@@ -54,7 +54,8 @@ class Weather extends Component {
                      temperature: result.main.temp, 
                      city: result.name, 
                      image: result.weather.icon,
-                     picture:`http://openweathermap.org/img/w/${result.weather[0].icon}.png`
+                     picture:`http://openweathermap.org/img/w/${result.weather[0].icon}.png`,
+                     description: result.weather[0].description
                     });
             }, (error) => {
                 console.log('get weather error: ', error);
@@ -74,19 +75,22 @@ class Weather extends Component {
         return (
 
             <div className="weather container">
-                <div className="row">
-                    <div className="col">
+                <div className="row justify-content-center">
+                    {/* <div className="col"> */}
                         <h5 className = 'temp mt-2 mb-0'>{this.state.temperature.toFixed('0') + '' + '\xB0'}</h5>
-                    </div>
-                    <div className="col">
+                    {/* </div> */}
+                    {/* <div className="col">
                         <img width={100} height={100} src= {this.state.picture}/>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="row">
-                    <h5 className='city mb-2'>{ "in" + ' ' + this.state.city}</h5>
+                <div class="row justify-content-center">
+                    <p className='desc mr-4'>{this.state.description}<br /></p>
                 </div>
-                <div className="row">
-                        <form className=" text-center form" onSubmit={this.handleSubmit}>
+                <div className="row justify-content-center">
+                    <h5 className='city mr-3'>{ "in" + ' ' + this.state.city}</h5>
+                </div>
+                <div className="row justify-content-center">
+                        <form className="mb-3 ml-5 form" onSubmit={this.handleSubmit}>
                             <input
                             className="weather-input"
                             value={value}

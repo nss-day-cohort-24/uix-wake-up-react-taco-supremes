@@ -77,7 +77,7 @@ class ToDoList extends React.Component {
       if(printedList){ // Printed list
         return (
             <div>
-                  <h3 className="text-center"> My Todo List </h3>
+                  <h3 className="text-center mt-3"> TO DO </h3>
                   <AddItem add={this.handleAddItem.bind(this)} />
                   {this.state.loading === true
                     ? <h3> LOADING... </h3>

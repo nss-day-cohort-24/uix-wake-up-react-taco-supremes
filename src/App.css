@@ -14,10 +14,11 @@ h3{
 
 
 footer{
-  position: absolute;
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
+
  /* --------------------------------------- CLASSES -------------------------- */
 
 
@@ -29,6 +30,10 @@ footer{
 .btn-primary{
   background-color: blue;
   border-color: blue;
+}
+
+.list-group-item{
+  border: 2px solid blue;
 }
 
 
@@ -65,7 +70,7 @@ footer{
 }
 
 #login{
-  background-color: orange;
+  background-color: blue;
   /* height: 100%; */
 
 
@@ -73,7 +78,7 @@ footer{
 }
 
 #weather{
-  background-color: pink;
+  background-color: blue;
 
 }
 

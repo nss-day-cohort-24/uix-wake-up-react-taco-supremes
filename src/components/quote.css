@@ -20,5 +20,6 @@ p{
 }
 
 #quoteContainer{
-    background-color: blue;
+    /* background-color: blue; */
+    background: linear-gradient(to right,#fb8e1e,#2b00f7);
 }

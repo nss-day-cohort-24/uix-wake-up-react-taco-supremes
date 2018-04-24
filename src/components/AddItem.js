@@ -11,12 +11,12 @@ class AddItem extends React.Component{
   }
   render(){
     return (
-      <div className="col-sm-12 text-center">
+      <div className="col-sm-12">
         <input
           type="text"
           ref="newItem"
-          className="form-control"
-          placeholder="New Item"
+          className="form-control mb-3"
+          placeholder="New Task"
           onKeyDown={this.handleSubmit.bind(this)} />
       </div>
 

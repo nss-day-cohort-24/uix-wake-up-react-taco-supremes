@@ -55,21 +55,29 @@ class Login extends Component {
       }
 
       authenticate(){
-        console.log('authentication function running');
         loginWithGoogle()
         .then(() => {
             this.setState({
                 authed: true
             });
             
-            console.log("Authenticate: ", this);
+            console.log("Authenticated: ", this);
         });
       }
 
       logoutApp(){
-        console.log('logout function running');
-        logout();
-      }
+        logout()
+        .then(()=>{
+          this.setState({
+            authed: false,
+            loading: false,
+            uid: null,
+            displayNone: null,
+            display: "none"
+        });
+        console.log('logged out state: ', this);
+      });
+    }
 
     render() {
 
@@ -77,7 +85,7 @@ class Login extends Component {
         return(
             <div className="logIn">
                 <button style={{display: this.state.displayNone}} type="button" onClick={() => this.authenticate('google')} className="btn btn-outline-light btn-lg">G Login</button>
-                <button style={{display: this.state.display}} type="button" onClick={() => this.authenticate('google')} className="btn btn-outline-light btn-lg">G Logout</button>
+                <button style={{display: this.state.display}} type="button" onClick={() => this.logoutApp()} className="btn btn-outline-light btn-lg">G Logout</button>
             </div>
         )
     }

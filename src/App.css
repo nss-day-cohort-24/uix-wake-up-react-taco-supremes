@@ -41,11 +41,11 @@ h3{
 }
 
 #masterContainer{
-  height: 100vh;
+  height: calc(100vh - 380px);
 }
 
 #newsDiv{
-  height: calc(100vh - 350px);
+  height: calc(100vh - 210px);
   overflow: scroll;
   /* background-color: pink; */
 

@@ -13,6 +13,11 @@ h3{
 }
 
 
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
  /* --------------------------------------- CLASSES -------------------------- */
 
 
@@ -31,9 +36,6 @@ h3{
  /* --------------------------------------- IDS -------------------------- */
 
  #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
   background-color: blue;
   color: white;
   font-size: 2.2em;
@@ -57,22 +59,22 @@ h3{
 }
 
 #goodMorning{
-  text-align: center;
-  /* align-self: center; */
+  align-self: center;
   /* background-color: yellow; */
   /* height: 100%; */
 }
 
 #login{
-  /* background-color: orange; */
+  background-color: orange;
   /* height: 100%; */
+
 
   text-align: center;
 }
 
 #weather{
-  /* background-color: pink; */
-  height: 100%;
+  background-color: pink;
+
 }
 
 

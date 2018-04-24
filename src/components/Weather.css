@@ -5,7 +5,8 @@
 }
 
 h5{
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: bolder;
 }
 
 .city{
@@ -20,3 +21,4 @@ h5{
     align-self: center;
     text-align: center;
 }
+

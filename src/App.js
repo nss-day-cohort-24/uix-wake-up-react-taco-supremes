@@ -68,13 +68,13 @@ return rebase.initializedApp.auth().signInWithPopup(googleProvider)
     <div id="masterContainer">
       <div id="header"  className="container">
         <div  className = "row">
-          <div id="goodMorning" className = "col-5 col-lg-6">
-            <h2  className ="pt-5">Good Morning! </h2>
+          <div id="goodMorning" className = "col-5 text-center">
+            <h2 >Good<br /> Morning! </h2>
           </div>
-          <div id="weather" className="col-4 col-lg-4">
-            <Weather/> 
+          <div id="weather" className=" col-5">
+          <Weather/> 
           </div>
-          <div id="login" className="col-auto col-lg-1">
+          <div id="login" className=" col-2">
               <Login />
           </div>
          </div>

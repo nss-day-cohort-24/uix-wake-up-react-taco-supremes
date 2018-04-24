@@ -13,13 +13,16 @@ class App extends Component {
 
 
     <div id="masterContainer">
-      <div  id="header" className="container">
-        <div className = "row">
-          <div className = "col-lg mt-4">
-            <h2 id="goodMorning" className ="goodMorning pl-5 pt-2">Good Morning! </h2>
+      <div id="header"  className="container">
+        <div  className = "row">
+          <div id="goodMorning" className = "w-25 col-lg-6">
+            <h2  className ="pt-5">Good Morning! </h2>
           </div>
-          <div className = 'col-lg mb-5'>
+          <div id="weather" className="col-lg-5 ">
             <Weather/> 
+          </div>
+          <div id="login" className="col-lg-1 ">
+              <Login />
           </div>
          </div>
       </div>

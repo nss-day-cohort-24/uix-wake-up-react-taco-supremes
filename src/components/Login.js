@@ -82,7 +82,7 @@ class Login extends Component {
         return(
             <div className="logIn">
                 <button style={{display: this.state.displayNone}} type="button" onClick={() => this.authenticate('google')} className="btn btn-outline-light btn-lg">G Login</button>
-                <p style={{display: this.state.display}}>Hello, {this.props.uid.name}! </p>
+                {/* <p style={{display: this.state.display}}>Hello, {this.props.uid.name}! </p> */}
                 <button style={{display: this.state.display}} type="button" onClick={() => this.logoutApp()} className="btn btn-outline-light btn-lg">G Logout</button>
             </div>
         )

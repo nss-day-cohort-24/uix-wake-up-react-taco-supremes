@@ -75,21 +75,20 @@ class Weather extends Component {
 
             <div className="weather container">
                 <div className=" row temp">
-                    <div className='col-lg'>
+                    
                         <h5 className = 'temp mt-2 mb-0'>{this.state.temperature.toFixed('0') + '' + '\xB0'}</h5>
                         <img width={100} height={100} src= {this.state.picture}/>
                         <h5 className='city mb-2'>{ "in" + ' ' + this.state.city}</h5>
-                    </div>
-                    <div className='col-lg'>
+                    
                         <form className="form" onSubmit={this.handleSubmit}>
                             <input
                             className="weather-input"
                             value={value}
                             type="text"
-                            placeholder="  Zip-Code" onChange={this.handleChange} >
+                            placeholder="Zip Code" onChange={this.handleChange} >
                             </input>
                         </form>
-                     </div>
+                     
                 </div>
             </div>
 

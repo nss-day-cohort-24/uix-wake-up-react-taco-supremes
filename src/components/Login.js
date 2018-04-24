@@ -5,8 +5,6 @@ import {rebase} from '../config/constants';
  
 
 class Login extends Component {
-
-
     constructor(props) {
         super(props);
 
